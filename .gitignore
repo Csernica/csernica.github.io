@@ -1,0 +1,20 @@
+# Working/source files — not part of the published site
+/source/
+/uploads/
+/Current Site (recreation).dc.html
+*.docx
+~$*
+~WRL*.tmp
+.Rhistory
+
+# Unused image leftovers from the source document
+/figures/image1.jpeg
+/figures/image2.png
+/figures/image3.png
+
+# Unused thesis figures (keep only the one used on the Home page)
+/figures/thesis/*
+!/figures/thesis/another_fragmentation_example.png
+
+# Canvas editor artifact
+/.thumbnail

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tim Csernica &mdash; Analytical &amp; Environmental Chemist</title>
+<meta name="description" content="Tim Csernica is an analytical and environmental chemist studying the chemical signatures that reveal the history of compounds, using stable isotopes and computational methods.">
+<meta name="author" content="Tim Csernica">
+<meta property="og:title" content="Tim Csernica — Analytical & Environmental Chemist">
+<meta property="og:description" content="An analytical and environmental chemist studying the chemical signatures that reveal the history of compounds.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='23' font-family='Inter,system-ui,sans-serif' font-size='17' font-weight='600' fill='%23ffffff' text-anchor='middle'>TC</text></svg>">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-0fb2c604-ae14-4125-a69d-a40ebb91a087/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #000000; color: #ffffff; font-family: Inter, system-ui, sans-serif; }
+  a { color: #ffffff; text-underline-offset: 3px; }
+  a:hover { color: rgba(255,255,255,0.9); }
+  ::selection { background: rgba(255,255,255,0.25); }
+  :focus { outline: none; }
+  :focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+
+  @keyframes reveal-rise {
+    from { opacity: 0; transform: translateY(34px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  /* Scroll-linked, not clock-linked: progress is driven by the element's own
+     position in the viewport, so it plays forward as you scroll down and runs
+     backward — hiding again — when you scroll back up past it. Once the entry
+     range completes it stays at 100%, including after scrolling off the top.
+     Where the feature is unsupported the rule never applies and content is
+     simply visible. */
+  @supports (animation-timeline: view()) {
+    [data-reveal] {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] { animation: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="background: #000000; color: #ffffff; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- ─────────── NAV ─────────── -->
+  <div style="position: sticky; top: 0; z-index: 50; transition: background 220ms ease, border-color 220ms ease; background: {{ navBg }}; border-bottom: 1px solid {{ navBorder }};" style-hover="background: #000000; border-bottom-color: rgba(255,255,255,0.22);">
+    <div style="max-width: 960px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; gap: 28px;">
+      <a href="#" onClick="{{ goHome }}" style="text-decoration: none; color: #ffffff; font-size: 17px; font-weight: 500; letter-spacing: -0.01em; margin-right: auto;">Tim Csernica</a>
+      <a href="#" onClick="{{ goHome }}" style="font-size: 15px; text-decoration: none; color: {{ navHome }};" style-hover="color: #ffffff;">Home</a>
+      <a href="#" onClick="{{ goResearch }}" style="font-size: 15px; text-decoration: none; color: {{ navResearch }};" style-hover="color: #ffffff;">Research</a>
+      <a href="Csernica_CV.pdf" target="_blank" style="font-size: 15px; text-decoration: none; color: rgba(255,255,255,0.9);" style-hover="color: #ffffff;">CV</a>
+      <a href="#" onClick="{{ goContact }}" style="font-size: 15px; text-decoration: none; color: {{ navContact }};" style-hover="color: #ffffff;">Contact</a>
+    </div>
+  </div>
+
+  <!-- ═══════════ HOME ═══════════ -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div data-screen-label="Home" style="flex: 1; position: relative; overflow: hidden; margin-top: -60px;">
+
+    <img src="figures/thesis/another_fragmentation_example.png" alt="Fragment differencing of doubly-substituted methionine" style="position: absolute; top: 62px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 790px; opacity: 0.55; pointer-events: none; z-index: 0;">
+
+    <div style="position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 296px 40px 96px;">
+      <div data-reveal style="position: relative; float: right; width: 230px; margin: 4px 0 24px 40px;">
+        <img src="Photos/headshot-web.jpg" alt="Portrait of Tim Csernica" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 22%; border-radius: 8px;">
+        <div style="position: absolute; inset: -1px; border-radius: 9px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); pointer-events: none;"></div>
+      </div>
+      <div style="min-width: 0;">
+        <p data-reveal style="margin: 0 0 18px; font-size: 19px; line-height: 1.6;">Hi, I&rsquo;m Tim. I&rsquo;m an analytical and environmental chemist, and I&rsquo;m interested in the chemical, biological, and geological history of compounds.</p>
+        <p data-reveal style="margin: 0 0 18px; font-size: 16px; line-height: 1.68; color: rgba(255,255,255,0.9);">Currently, I'm a postdoctoral scholar at Northwestern University. Previously, I was a PhD student at Caltech.</p>
+        <p data-reveal style="margin: 0 0 18px; font-size: 16px; line-height: 1.68; color: rgba(255,255,255,0.9);">I study chemical signatures which reveal a compound&rsquo;s history. At present, I&rsquo;m most interested in two questions. First, which chemical signatures encode the fate of anthropogenic compounds in the environment? Second, how do changes in human physiology create chemical signatures which we can observe? The first topic includes anthropogenic pollution such as DDT and the byproducts of chemical weapons. The second includes studies on sports doping detection and the molecular signals of cancer.</p>
+        <p data-reveal style="margin: 0 0 18px; font-size: 16px; line-height: 1.68; color: rgba(255,255,255,0.9);">I apply experimental, computational, and theoretical tools to investigate these problems. Most of my work involves stable isotopes, which are valuable as they record the processes a compound underwent with a high degree of fidelity, using signatures that can persist for billions of years. However, isotopic signatures are difficult to measure. I design methods to make isotopic measurements more effective and develop new theory to understand the causes of isotopic signatures. Simultaneously, I&rsquo;m working on computational tools to connect theory and experiment. I&rsquo;m currently applying machine learning techniques to these datasets to understand how to design targeted measurements in high-dimensional isotope space.</p>
+        <p data-reveal style="margin: 0; font-size: 16px; line-height: 1.68; color: rgba(255,255,255,0.9);">I&rsquo;m always interested in new problems. Please <a href="#" onClick="{{ goContact }}" style="color: #ffffff;">get in touch</a> if you want to chat about future collaborations!</p>
+      </div>
+
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ═══════════ RESEARCH ═══════════ -->
+  <sc-if value="{{ isResearch }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Research" style="flex: 1;">
+    <div style="max-width: 960px; margin: 0 auto; padding: 76px 40px 0;">
+      <h1 style="margin: 0; font-size: 44px; font-weight: 500; line-height: 1.1; letter-spacing: -0.03em;">Past Projects</h1>
+      <div style="height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.22) 48px, rgba(255,255,255,0.22) calc(100% - 48px), transparent); margin: 40px 0 0;"></div>
+    </div>
+
+    <div style="max-width: 960px; margin: 0 auto; padding: 56px 40px 40px; display: flex; flex-direction: column; gap: 72px;">
+
+      <!-- DDT -->
+      <div>
+        <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">Tracking DDT Contamination Off the California Coast</h3>
+        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+          <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
+            <img src="figures/fig-ddt-isotopes.jpeg" alt="Measured values for the isotope content of DDT extracted from sediments" style="width: 100%;">
+          </div>
+          <figcaption style="margin-top: 14px; font-size: 12.5px; line-height: 1.62; color: rgba(255,255,255,0.9);">Measured values for the isotope content of DDT extracted from sediments. Our technique observes isotopic content in two fragments (m/z = 316 and 235) and observes both single substitutions (e.g., <sup>37</sup>Cl) and multiple substitutions (e.g., <sup>13</sup>C<sup>37</sup>Cl). Prior to this work, a typical isotopic workflow observed a single, singly-substituted isotope (<sup>13</sup>C or <sup>37</sup>Cl).</figcaption>
+        </figure>
+        <p data-reveal style="margin: 0 0 16px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">In the 1950s and 60s, the world&rsquo;s largest producer of DDT operated in Los Angeles and dumped waste products from its manufacturing process off the coast of California. Growing concern about DDT&rsquo;s effects on wildlife, notably featured in Rachel Carson&rsquo;s <em>Silent Spring</em>, led to an end to DDT production in the early 70s. However, significant quantities of <a href="https://www.latimes.com/projects/la-coast-ddt-dumping-ground/" target="_blank" style="color: #ffffff;">DDT remained in the sediments</a>, and both DDT and toxic breakdown products are being released into the environment (e.g., <a href="https://www.latimes.com/environment/story/2021-01-31/california-sea-lions-cancer-ddt" target="_blank" style="color: #ffffff;">appearing in sea lion blubber</a>).</p>
+        <p data-reveal style="margin: 0 0 20px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">This project developed methods to study the isotopic content of DDT to trace it through the environment. The chemical processes which break down DDT impart characteristic isotope effects. This results in a chemical fingerprint that shows which processes are occurring and to what extent they have occurred. Our work measured the isotopic content of DDT in marine sediments, observing many elements simultaneously and at greater precision than previous techniques, and constraining the extent of DDT breakdown in these sediments. We hope that these tools can be used to track and understand the distribution of DDT, contributing to future remediation efforts.</p>
+        <p data-reveal style="clear: both; margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.9);">Csernica, T., Eiler, J. M. &amp; Sessions, A. L. <strong style="color: #ffffff; font-weight: 500;">Multi-isotope characterization of 4,4&prime;-DDT isolated from sediment samples via Orbitrap-IRMS.</strong> <em>Marine Pollution Bulletin</em> (2026). <a href="https://doi.org/10.1016/j.marpolbul.2025.119185" target="_blank" style="color: #ffffff; word-break: break-word;">doi:10.1016/j.marpolbul.2025.119185</a></p>
+      </div>
+
+      <div style="height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.22) 48px, rgba(255,255,255,0.22) calc(100% - 48px), transparent);"></div>
+
+      <!-- SARIN PRECURSORS -->
+      <div>
+        <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">Source Attribution of Chemical Weapons Precursors</h3>
+        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+          <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
+            <img src="figures/fig-mpa-crossplot.png" alt="A cross plot of the carbon-13 and deuterium values for methylphosphonic acid" style="width: 100%;">
+          </div>
+          <figcaption style="margin-top: 14px; font-size: 12.5px; line-height: 1.62; color: rgba(255,255,255,0.9);">Figure: A cross plot of the <sup>13</sup>C and <sup>2</sup>H values for methylphosphonic acid. The methyl group of the precursors lies in the red box. Isotope effects associated with the synthesis of the DMMP intermediate reduce the <sup>13</sup>C content, while the <sup>2</sup>H content is often, but not always, reduced compared to the precursor. The combined signature distinguishes compounds which individual isotopes fail to differentiate.</figcaption>
+        </figure>
+        <p data-reveal style="margin: 0 0 16px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">Preventing the spread of chemical weapons requires technical strategies to trace their production, in order to enforce arms control treaties and to identify bad actors. Stable isotopes are a valuable tool for doing so because they record both the sources of feedstock chemicals and the specific reaction conditions encountered along a synthetic route.</p>
+        <p data-reveal style="margin: 0 0 20px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">I&rsquo;ve applied stable isotope forensics to precursors associated with sarin, which is highly regulated but <a href="https://en.wikipedia.org/wiki/Ghouta_chemical_attack" target="_blank" style="color: #ffffff;">continues to be deployed</a>. Here, we applied an Orbitrap-IRMS method to simultaneously observe the <sup>13</sup>C and <sup>2</sup>H content of the methyl group of sarin precursors (we first produce a safer byproduct, with no isotope effects, to aid sample handling). The combination of <sup>13</sup>C and <sup>2</sup>H measurements distinguished stocks more effectively, and with smaller sample sizes and less preparatory chemistry, than previous techniques. The methyl group we observed is typically derived from industrial methanol. Its <sup>13</sup>C content is modified by a reaction producing an intermediate (dimethyl methylphosphonate) and the resulting <sup>13</sup>C differs substantially across batches. The <sup>2</sup>H shows even greater variance, possibly due to exchange reactions during the chemical synthesis, making the origins of this signature a good target for future study.</p>
+        <p data-reveal style="clear: both; margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.9);">Csernica, T., Moran, J. J., Fraga, C. G. &amp; Eiler, J. M. <strong style="color: #ffffff; font-weight: 500;">Simultaneous observation of &sup2;H and &sup1;&sup3;C enrichment of methyl phosphonic acid via Orbitrap-IRMS, with applications to nerve agent forensics.</strong> <em>Talanta</em> (2025). <a href="https://doi.org/10.1016/j.talanta.2024.126802" target="_blank" style="color: #ffffff; word-break: break-word;">doi:10.1016/j.talanta.2024.126802</a></p>
+      </div>
+
+      <div style="height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.22) 48px, rgba(255,255,255,0.22) calc(100% - 48px), transparent);"></div>
+
+      <!-- THEORY -->
+      <div>
+        <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">New Theory to Understand Measurements of Many Isotopic Properties</h3>
+        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+          <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
+            <img src="figures/fig-isotomics-schematic.png" alt="Tracking N2O through a mass spectrometry experiment which selects a subset of the population by cardinal mass, then fragments it" style="width: 100%;">
+          </div>
+          <figcaption style="margin-top: 14px; font-size: 12.5px; line-height: 1.62; color: rgba(255,255,255,0.9);">Figure: A worked example tracking a simple molecule (N<sub>2</sub>O) through a mass spectrometry experiment which selects a subset of the population based on cardinal mass, then fragments the resulting subset. By tracking each isotopic version rigorously, it is possible to understand the resulting spectrum in terms of the parent population. This strategy has since been applied to amino acids to observe over 100 isotopic properties of a single molecule.</figcaption>
+        </figure>
+        <p data-reveal style="margin: 0 0 16px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">Stable isotopes are a powerful tool for tracking a compound&rsquo;s origin and fate, contributing to questions such as the <a href="https://www.journals.uchicago.edu/doi/full/10.1086/605111" target="_blank" style="color: #ffffff;">date of the introduction of maize to North America</a>, the <a href="https://gml.noaa.gov/outreach/faq_cat-3.html" target="_blank" style="color: #ffffff;">source of atmospheric CO<sub>2</sub></a>, and the <a href="https://arxiv.org/abs/1912.04361" target="_blank" style="color: #ffffff;">origin of Earth&rsquo;s water</a>. These successes have been achieved via measurements of small gases, such as H<sub>2</sub> and CO<sub>2</sub>, which are amenable to precise measurement, typically via mass spectrometry. A typical organic molecule carries a significantly greater amount of isotopic information, as rare isotopes such as <sup>13</sup>C and <sup>2</sup>H may be enriched or depleted at specific atomic positions, while an individual molecule may have multiple such substitutions.</p>
+        <p data-reveal style="margin: 0 0 16px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">Recent experimental advances (see below) have enabled us to access more of this information, especially via mass spectrometry experiments which observe both an intact molecule and its fragments and measure the isotopic properties of all of these. However, these experiments are difficult to interpret, both because of the combinatorial explosion in number of isotopic forms (e.g., methionine has some 10 million isotopic versions) and due to the unclear manner in which these are sampled via multi-stage experiments.</p>
+        <p data-reveal style="margin: 0 0 20px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">In this project, I developed mathematical techniques for enumerating and tracking the isotopic versions of a molecule through experiments. I proposed a new way to report isotope ratios, as a &lsquo;U&rsquo; value, comparing concentrations of substituted isotopologues with the isotopic form of a molecule with no rare substitutions (typically, isotope ratios are reported relative to the concentration of a single common isotope). The U value shows many benefits in computation because it places distinct measurements in a common reference frame, facilitating basic operations such as subtraction and multiplication. This reframing enables more rigorous data treatment, including the comparison of results from distinct fragmentation measurements. Using these results, I then derived analytical solutions to experimental designs which were previously treated numerically. Because the framework is generalizable, I hope to see it used widely as the mass spectrometry approaches become more widespread.</p>
+        <p data-reveal style="clear: both; margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.9);">Csernica, T. &amp; Eiler, J. M. <strong style="color: #ffffff; font-weight: 500;">High-dimensional isotomics, part 1: A mathematical framework for isotomics.</strong> <em>Chemical Geology</em> (2023). <a href="https://doi.org/10.1016/j.chemgeo.2022.121235" target="_blank" style="color: #ffffff; word-break: break-word;">doi:10.1016/j.chemgeo.2022.121235</a></p>
+      </div>
+
+      <div style="height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.22) 48px, rgba(255,255,255,0.22) calc(100% - 48px), transparent);"></div>
+
+      <!-- METHIONINE -->
+      <div>
+        <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">Measurement of Over 100 Isotopic Properties of Methionine</h3>
+        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+          <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
+            <img src="figures/fig-methionine-146.png" alt="Visualization of all 146 isotopic properties measured in the methionine dataset" style="width: 100%;">
+          </div>
+          <figcaption style="margin-top: 14px; font-size: 12.5px; line-height: 1.62; color: rgba(255,255,255,0.9);">Figure: A visualization of all 146 isotopic properties measured in the methionine dataset. Each block, &ldquo;M+1&rdquo;, &ldquo;M+2&rdquo;, etc. corresponds to a different slice of the isotopic population being selected, fragmented, and measured. Properties which are enriched in the sample relative to the standard are shown in red while depletions are shown in blue; the size of each circle corresponds to the precision.</figcaption>
+        </figure>
+        <p data-reveal style="margin: 0 0 16px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">In a companion paper to the mathematics developed above, I implemented a measurement of 146 isotopic properties of a compound. Typical workflows in stable isotope geochemistry include a small number of variables, 1&ndash;5, which give the molecular-average content of single rare substitutions (e.g., <sup>13</sup>C, <sup>2</sup>H, or <sup>15</sup>N). This project significantly expanded that number, while capturing multiple substitutions (e.g., <sup>13</sup>C<sup>34</sup>S<sup>2</sup>H) and substitutions localized to specific positions in the molecule (e.g., <sup>13</sup>C<sub>methyl</sub><sup>13</sup>C<sub>gamma</sub><sup>34</sup>S).</p>
+        <p data-reveal style="margin: 0 0 20px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">I did so via a mass spectrometry strategy which isolated key subsets of the isotopic population, then fragmented this population. For example, the &ldquo;M+2&rdquo; experiment isolates only isotopic substitutions with a cardinal mass increase of 2, which could occur via a rare substitution with a mass increase of 2 (e.g., <sup>18</sup>O or <sup>34</sup>S) or multiple isotopes with a mass increase of 1 (e.g., <sup>13</sup>C<sup>15</sup>N). After fragmentation, the resulting spectrum includes peaks without substitution when those substitutions are lost (i.e., occur in part of the molecule which is lost via fragmentation). The resulting dataset substantially increases the amount of information accessible via isotopic measurement, providing a way to gain unprecedented insight into a molecule and motivating the need for a better understanding of the drivers of isotopic composition (e.g., what controls the abundance of multiple substitutions in organic molecules?).</p>
+        <p data-reveal style="clear: both; margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.9);">Csernica, T., Sessions, A. L. &amp; Eiler, J. M. <strong style="color: #ffffff; font-weight: 500;">High-dimensional isotomics, part 2: Observations of over 100 constraints on methionine&rsquo;s isotome.</strong> <em>Chemical Geology</em> (2023). <a href="https://doi.org/10.1016/j.chemgeo.2023.121771" target="_blank" style="color: #ffffff; word-break: break-word;">doi:10.1016/j.chemgeo.2023.121771</a></p>
+      </div>
+
+      <div style="height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.22) 48px, rgba(255,255,255,0.22) calc(100% - 48px), transparent);"></div>
+
+      <!-- PRECISION -->
+      <div>
+        <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">Long Duration Measurements of Isotopic Properties</h3>
+        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+          <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
+            <img src="figures/fig-precision-24h.png" alt="Observed precision for several isotope ratios over a 24-hour measurement of acetone" style="width: 100%;">
+          </div>
+          <figcaption style="margin-top: 14px; font-size: 12.5px; line-height: 1.62; color: rgba(255,255,255,0.9);">Figure: Observed precision (&sigma;<sub>AE</sub>) for several isotope ratios (the indicated rare isotope versus the unsubstituted isotope) over a 24-hour measurement of acetone. For the majority of isotopes, the precision improves constantly, tracking the shot noise limit (&sigma;<sub>SN</sub>) (right panel). Here, <sup>2</sup>H is an exception due to the presence of a contaminant. Intriguingly, the <sup>17</sup>O value has a constant ratio with the shot noise limit but stabilizes at a different value than the remaining isotope, which we attribute to interference artifacts due to the close-lying, and much more abundant, <sup>13</sup>C peak. The dynamics of these sorts of interferences in Orbitrap measurements are the subject of ongoing study.</figcaption>
+        </figure>
+        <p data-reveal style="margin: 0 0 16px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">The high-dimensional isotopic measurements discussed above required new analytical advances to become feasible. A major challenge here relates to ion counting: constraining an isotope ratio at a useful level of precision requires the analyst to observe a large number of ions (e.g., 1e6 instances of the rare isotope may be required). This requirement is demanding as the Orbitrap mass spectrometers we employ can observe a limited number of ions per second without degrading performance.</p>
+        <p data-reveal style="margin: 0 0 20px; font-size: 15.5px; line-height: 1.68; color: rgba(255,255,255,0.94);">Therefore, we explored strategies for long-duration measurements, investigating instrument stability over durations of tens of hours. We found that this generally, but not always, tracked the shot noise limit. However, this internal measurement precision did not persist across sequences of measurements, which are required in Orbitrap-based strategies to standardize any sample measurements. The resulting precision for a series of measurements was typically significantly worse than the internal precision. This suggested that future efforts should aim at controlling inter-acquisition drift and reproducibility, which remains an ongoing issue.</p>
+        <p data-reveal style="clear: both; margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.9);">Csernica, T., Bhattacharjee, S. &amp; Eiler, J. M. <strong style="color: #ffffff; font-weight: 500;">Accuracy and precision of ESI-Orbitrap-IRMS observations via reservoir injection.</strong> <em>Int. J. Mass Spectrom.</em> (2023). <a href="https://doi.org/10.1016/j.ijms.2023.117084" target="_blank" style="color: #ffffff; word-break: break-word;">doi:10.1016/j.ijms.2023.117084</a></p>
+      </div>
+    </div>
+
+    <div style="height: 220px;"></div>
+  </div>
+  </sc-if>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Contact" style="flex: 1;">
+    <div style="max-width: 960px; margin: 0 auto; padding: 76px 40px 120px; display: flex; flex-wrap: wrap; gap: 40px; align-items: start;">
+      <div style="width: 380px; max-width: 100%;">
+        <h1 style="margin: 0 0 32px; font-size: 44px; font-weight: 500; line-height: 1.1; letter-spacing: -0.03em;">Contact</h1>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px;">
+          <p style="margin: 0;"><span style="color: rgba(255,255,255,0.9);">Email:</span> <span style="color: #ffffff;">tacsernica [at] gmail [dot] com</span></p>
+          <p style="margin: 0;"><span style="color: rgba(255,255,255,0.9);">Google Scholar:</span> <a href="https://scholar.google.com/citations?user=UCFfnj4AAAAJ&hl=en&oi=sra" target="_blank" style="color: #ffffff;">scholar.google.com/citations</a></p>
+          <p style="margin: 0;"><span style="color: rgba(255,255,255,0.9);">GitHub:</span> <a href="https://github.com/csernica" target="_blank" style="color: #ffffff;">github.com/csernica</a></p>
+        </div>
+      </div>
+      <div style="width: 380px; margin-left: auto;">
+        <img src="Photos/graduation_robes.jpg" alt="Tim Csernica at graduation" style="width: 100%; border-radius: 8px;">
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 'home' };
+
+  nav(page) {
+    return (e) => {
+      if (e) e.preventDefault();
+      this.setState({ page }, () => window.scrollTo(0, 0));
+    };
+  }
+
+  renderVals() {
+    const p = this.state.page;
+    const active = '#ffffff';
+    const idle = 'rgba(255,255,255,0.66)';
+    return {
+      isHome: p === 'home',
+      navBg: p === 'home' ? 'transparent' : 'rgba(0,0,0,0.9)',
+      navBorder: p === 'home' ? 'transparent' : 'rgba(255,255,255,0.18)',
+      isResearch: p === 'research',
+      isContact: p === 'contact',
+      navHome: p === 'home' ? active : idle,
+      navResearch: p === 'research' ? active : idle,
+      navContact: p === 'contact' ? active : idle,
+      goHome: this.nav('home'),
+      goResearch: this.nav('research'),
+      goContact: this.nav('contact')
+    };
+  }
+}
+</script>
+</body>
+</html>
