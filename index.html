@@ -63,6 +63,21 @@
   @media (prefers-reduced-motion: reduce) {
     [data-reveal] { animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important; }
   }
+
+  /* ─── Mobile layout: the desktop design uses right-floated images and a fixed
+     hero top-padding sized for the large background figure. On narrow screens the
+     floats leave text columns too thin (ragged wrapping) and the fixed padding
+     opens a big gap above the intro. Below the phone breakpoint we drop the floats
+     and let images stack full-width. */
+  @media (max-width: 640px) {
+    .hero { padding: 172px 22px 72px !important; }
+    .hero-photo { float: none !important; width: 150px !important; margin: 0 auto 22px !important; }
+    .fig { float: none !important; width: auto !important; margin: 0 0 24px !important; }
+    /* Nav: the desktop row of links + 40px padding + 28px gaps overflows a phone
+       width and makes the whole page scroll sideways. Tighten spacing and text. */
+    .nav-inner { padding-left: 16px !important; padding-right: 16px !important; gap: 15px !important; }
+    .nav-inner a { font-size: 14px !important; }
+  }
 </style>
 </helmet>
 
@@ -70,7 +85,7 @@
 
   <!-- ─────────── NAV ─────────── -->
   <div style="position: sticky; top: 0; z-index: 50; transition: background 220ms ease, border-color 220ms ease; background: {{ navBg }}; border-bottom: 1px solid {{ navBorder }};" style-hover="background: #000000; border-bottom-color: rgba(255,255,255,0.22);">
-    <div style="max-width: 960px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; gap: 28px;">
+    <div class="nav-inner" style="max-width: 960px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; gap: 28px;">
       <a href="#" onClick="{{ goHome }}" style="text-decoration: none; color: #ffffff; font-size: 17px; font-weight: 500; letter-spacing: -0.01em; margin-right: auto;">Tim Csernica</a>
       <a href="#" onClick="{{ goHome }}" style="font-size: 15px; text-decoration: none; color: {{ navHome }};" style-hover="color: #ffffff;">Home</a>
       <a href="#" onClick="{{ goResearch }}" style="font-size: 15px; text-decoration: none; color: {{ navResearch }};" style-hover="color: #ffffff;">Research</a>
@@ -85,8 +100,8 @@
 
     <img src="figures/thesis/another_fragmentation_example.png" alt="Fragment differencing of doubly-substituted methionine" style="position: absolute; top: 62px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 790px; opacity: 0.55; pointer-events: none; z-index: 0;">
 
-    <div style="position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 296px 40px 96px;">
-      <div data-reveal style="position: relative; float: right; width: 230px; margin: 4px 0 24px 40px;">
+    <div class="hero" style="position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 296px 40px 96px;">
+      <div data-reveal class="hero-photo" style="position: relative; float: right; width: 230px; margin: 4px 0 24px 40px;">
         <img src="Photos/headshot-web.jpg" alt="Portrait of Tim Csernica" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 22%; border-radius: 8px;">
         <div style="position: absolute; inset: -1px; border-radius: 9px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); pointer-events: none;"></div>
       </div>
@@ -116,7 +131,7 @@
       <!-- DDT -->
       <div>
         <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">Tracking DDT Contamination Off the California Coast</h3>
-        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+        <figure data-reveal class="fig" style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
           <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
             <img src="figures/fig-ddt-isotopes.jpeg" alt="Measured values for the isotope content of DDT extracted from sediments" style="width: 100%;">
           </div>
@@ -132,7 +147,7 @@
       <!-- SARIN PRECURSORS -->
       <div>
         <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">Source Attribution of Chemical Weapons Precursors</h3>
-        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+        <figure data-reveal class="fig" style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
           <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
             <img src="figures/fig-mpa-crossplot.png" alt="A cross plot of the carbon-13 and deuterium values for methylphosphonic acid" style="width: 100%;">
           </div>
@@ -148,7 +163,7 @@
       <!-- THEORY -->
       <div>
         <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">New Theory to Understand Measurements of Many Isotopic Properties</h3>
-        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+        <figure data-reveal class="fig" style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
           <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
             <img src="figures/fig-isotomics-schematic.png" alt="Tracking N2O through a mass spectrometry experiment which selects a subset of the population by cardinal mass, then fragments it" style="width: 100%;">
           </div>
@@ -165,7 +180,7 @@
       <!-- METHIONINE -->
       <div>
         <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">Measurement of Over 100 Isotopic Properties of Methionine</h3>
-        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+        <figure data-reveal class="fig" style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
           <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
             <img src="figures/fig-methionine-146.png" alt="Visualization of all 146 isotopic properties measured in the methionine dataset" style="width: 100%;">
           </div>
@@ -181,7 +196,7 @@
       <!-- PRECISION -->
       <div>
         <h3 data-reveal style="margin: 0 0 22px; font-size: 28px; font-weight: 500; line-height: 1.18; letter-spacing: -0.025em;">Long Duration Measurements of Isotopic Properties</h3>
-        <figure data-reveal style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
+        <figure data-reveal class="fig" style="float: right; width: 60%; margin: 4px 0 24px 34px; padding: 16px; border: 1px solid rgba(255,255,255,0.24); border-radius: 8px;">
           <div style="background: #ffffff; border-radius: 4px; padding: 12px 10px;">
             <img src="figures/fig-precision-24h.png" alt="Observed precision for several isotope ratios over a 24-hour measurement of acetone" style="width: 100%;">
           </div>
